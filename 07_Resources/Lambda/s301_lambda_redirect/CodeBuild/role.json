@@ -2,7 +2,7 @@
 	"CodeBuildRole": {
 		"Type": "AWS::IAM::Role",
 		"Properties": {
-			"RoleName": "xxx_codebuild",
+			"RoleName": { "Fn::Sub": "redirect_${UniqueParam}_codebuild" },
 			"AssumeRolePolicyDocument": {
 				"Version": "2012-10-17",
 				"Statement": [

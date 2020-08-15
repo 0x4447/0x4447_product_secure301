@@ -1,0 +1,6 @@
+{
+	"UrlToParam": {
+		"Description": "The URL where you want to redirect the user to. Including the protocall. For example: https://example.com",
+		"Type": "String"
+	}
+}

@@ -1,6 +1,7 @@
 {
-	"CodePipelineXXXWebhook": {
+	"CodePipelineRedirectWebhook": {
 		"Type": "AWS::CodePipeline::Webhook",
+		"Condition": "GitHubAutodeploymentCondition",
 		"Properties": {
 			"Authentication": "GITHUB_HMAC",
 			"AuthenticationConfiguration": {
@@ -12,9 +13,9 @@
 					"MatchEquals": "refs/heads/{Branch}"
 				}
 			],
-			"TargetPipeline": { "Ref": "CodePipelineXXX" },
+			"TargetPipeline": { "Ref": "CodePipelineRedirect" },
 			"TargetAction": "Material",
-			"TargetPipelineVersion": { "Fn::GetAtt": [ "CodePipelineXXX", "Version" ]},
+			"TargetPipelineVersion": { "Fn::GetAtt": [ "CodePipelineRedirect", "Version" ]},
 			"RegisterWithThirdParty": true
 		}
 	}

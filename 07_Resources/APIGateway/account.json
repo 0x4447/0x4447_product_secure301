@@ -1,0 +1,8 @@
+{
+	"APIGatewayAccount": {
+		"Type": "AWS::ApiGateway::Account",
+		"Properties": {
+			"CloudWatchRoleArn": { "Fn::GetAtt": ["APIGatewayRole", "Arn"] }
+		}
+	}
+}

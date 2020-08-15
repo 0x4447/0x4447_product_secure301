@@ -1,0 +1,9 @@
+{
+	"APIDomainName": {
+		"Type" : "AWS::ApiGateway::DomainName",
+		"Properties" : {
+			"CertificateArn" : { "Ref": "DomainFromCertParam" },
+			"DomainName" : { "Ref": "UrlFromParam" }
+		}
+	}
+}

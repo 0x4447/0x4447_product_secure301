@@ -8,14 +8,30 @@
                     "Parameters": [
                         "CodePipelineArtifactsParam",
                         "GitHubTokenParam",
-                        "StageParam"
+                        "StageParam",
+                        "UniqueParam"
+                    ]
+                },
+                {
+                    "Label": {
+                        "default": "Redirection"
+                    },
+                    "Parameters": [
+                        "DomainFromCertParam",
+                        "UrlFromParam",
+                        "UrlToParam"
                     ]
                 }
             ],
             "ParameterLabels": {
-                "CodePipelineArtifactsParam": { "default": "CodePipeline Artifacts Bucket" },
-                "GitHubTokenParam": { "default": "GitHub Token" },
-                "StageParam": { "default": "Stage" }
+                "CodePipelineArtifactsParam": {"default": "CodePipeline Artifacts Location"},
+                "GitHubTokenParam": {"default": "GitHub Token"},
+                "StageParam": {"default": "Git branch"},
+                "UniqueParam": {"default": "Unique Name"},
+
+                "DomainFromCertParam": {"default": "Certificate of the From URL"},
+                "UrlFromParam": {"default": "URL From"},
+                "UrlToParam": {"default": "URL To"}
             }
         }
 }

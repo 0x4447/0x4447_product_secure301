@@ -1,0 +1,11 @@
+{
+	"APIBasePathMapping": {
+		"Type" : "AWS::ApiGateway::BasePathMapping",
+		"Properties" : {
+			"DomainName" : { "Ref": "APIDomainName" },
+			"RestApiId" : { "Ref": "APIWebhookRedirect" },
+			"BasePath": "",
+			"Stage" : { "Ref": "WebhookRedirectStage" }
+		}
+	}
+}

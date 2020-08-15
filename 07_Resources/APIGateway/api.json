@@ -1,0 +1,55 @@
+{
+	"APIWebhookRedirect": {
+		"Type": "AWS::ApiGateway::RestApi",
+		"Properties": {
+			"Description": "Webhook to let Redirect send notifications to us.",
+			"Name": { "Fn::Sub": "redirect_${UniqueParam}" },
+			"Body": {
+				"swagger": "2.0",
+				"info": {
+					"description": "Redirect user to a new page over HTTPS.",
+					"version": "2018-08-02T22:09:40Z",
+					"title": { "Fn::Sub": "redirect_${UniqueParam}" }
+				},
+				"schemes": [
+					"https"
+				],
+				"paths": {
+					"/": {
+					  "get": {
+						"produces": [
+						  "application/json"
+						],
+						"responses": {
+						  "200": {
+							"description": "200 response",
+							"schema": {
+							  "$ref": "#/definitions/Empty"
+							}
+						  }
+						},
+						"x-amazon-apigateway-integration": {
+						  "type": "aws_proxy",
+						  "uri": { "Fn::Join": ["", ["arn", ":", "aws", ":", "apigateway", ":", { "Ref": "AWS::Region" }, ":", "lambda", ":", "path/2015-03-31/functions/", { "Fn::GetAtt": ["LambdaRedirect", "Arn"]}, "/invocations"]]},
+						  "responses": {
+							"default": {
+							  "statusCode": "200"
+							}
+						  },
+						  "passthroughBehavior": "when_no_match",
+						  "httpMethod": "POST",
+						  "contentHandling": "CONVERT_TO_TEXT"
+						}
+					  }
+					}
+				  },
+				"definitions": {
+					"Empty": {
+						"type": "object",
+						"title": "Empty Schema"
+					}
+				}
+			}
+		}
+	}
+}

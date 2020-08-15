@@ -1,8 +1,8 @@
 {
-	"CodePipelineXXXRole": {
+	"CodePipelineRedirectRole": {
 		"Type": "AWS::IAM::Role",
 		"Properties": {
-			"RoleName": "lambda_xxx_codepipeline",
+			"RoleName": { "Fn::Sub": "redirect_${UniqueParam}_codepipeline" },
 			"AssumeRolePolicyDocument": {
 				"Version": "2012-10-17",
 				"Statement": [

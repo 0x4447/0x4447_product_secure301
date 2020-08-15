@@ -1,14 +1,14 @@
 {
-	"CodePipelineXXX": {
+	"CodePipelineRedirect": {
 		"Type": "AWS::CodePipeline::Pipeline",
-		"DependsOn": "CodePipelineXXXRole",
+		"DependsOn": "CodePipelineRedirectRole",
 		"Properties": {
-			"Name": "lambda_xxx",
+			"Name": { "Fn::Sub": "redirect_${UniqueParam}" },
 			"ArtifactStore": {
 				"Location": { "Ref": "CodePipelineArtifactsParam" },
 				"Type": "S3"
 			},
-			"RoleArn": { "Fn::GetAtt": ["CodePipelineXXXRole", "Arn" ] },
+			"RoleArn": { "Fn::GetAtt": ["CodePipelineRedirectRole", "Arn" ] },
 			"Stages": [
 				{
 					"Name": "Get",
@@ -23,8 +23,8 @@
 								"Version": "1"
 							},
 							"Configuration": {
-								"Owner": "Retireryte",
-								"Repo": "Rr-Lambda-Generator-Avatar",
+								"Owner": { "Ref": "GitHubAccountNamearam" },
+								"Repo": "0x4447_product_simple301_lambda_redirect",
 								"Branch": { "Ref": "StageParam" },
 								"PollForSourceChanges": false,
 								"OAuthToken": { "Ref": "GitHubTokenParam" }

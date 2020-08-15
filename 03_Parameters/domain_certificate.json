@@ -1,0 +1,6 @@
+{
+	"DomainFromCertParam": {
+		"Description": "The ARN of the certificate from the Certificate Manager service.",
+		"Type": "String"
+	}
+}

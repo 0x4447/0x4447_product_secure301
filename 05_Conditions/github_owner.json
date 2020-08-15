@@ -1,0 +1,11 @@
+{
+	"GitHubAutodeploymentCondition": { 
+        "Fn::Not": [ 
+            {
+                "Fn::Equals" : [
+                    { "Ref": "GitHubAccountNamearam" }, "0x4447"
+                ]
+            }
+        ]
+    }
+}

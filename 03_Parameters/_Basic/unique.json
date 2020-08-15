@@ -1,0 +1,6 @@
+{
+	"UniqueParam": {
+		"Description": "A unique string that can allow mutliple deployments of the same stack in the same or different accoiunt.",
+		"Type": "String"
+	}
+}
