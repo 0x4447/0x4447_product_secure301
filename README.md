@@ -6,6 +6,8 @@ When deploying the stack you have to only manually make a SSL Certificate using 
 
 We chose to use API Gateway for this because using CloudFront in conjunction with S3 is very slow to work with. It take CloudFront 20 min to deploy the resources across all the regions, where as API Gateway is also deliver over CloudFront, but the deployment is instant. Since CloudFront in this case is managed by AWS itself.
 
+The stack was designed to handle one redirectsion per deployment to keep the solution simple and straight forward.
+
 # DISCLAIMER!
 
 This stack is available to anyone at no cost, but on an as-is basis. 0x4447, LLC. is not responsible for damages or costs of any kind that may occur when you use the stack. You take full responsibility when you use it.
