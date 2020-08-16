@@ -19,7 +19,7 @@ All you need to do to deploy this stack is click the button to the left and foll
 
 # What will deploy?
 
-![Secure301 Diagram](https://raw.githubusercontent.com/0x4447/0x4447-product-XXX/assets/diagram.png)
+![Secure301 Diagram](https://raw.githubusercontent.com/0x4447/0x4447_product_secure301/assets/diagram.png)
 
 - 1x API Gateway
 - 1x API Gateway Domain
