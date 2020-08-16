@@ -1,6 +1,10 @@
-# Title me
+# Secure301
 
-Describe me
+The secure301 stack is a simple solution to an annoying problem - it allows you to have HTTPS redirects with a 301 message. To achieve this the stack utilizes the API Gateway service and one basic Lambda to allow the redirect. 
+
+When deploying the stack you have to only manually make a SSL Certificate using the AWS Certificate Manager service, provide all the details in the deployment phase, and you'll get a working redirect. 
+
+We chose to use API Gateway for this because using CloudFront in conjunction with S3 is very slow to work with. It take CloudFront 20 min to deploy the resources across all the regions, where as API Gateway is also deliver over CloudFront, but the deployment is instant. Since CloudFront in this case is managed by AWS itself.
 
 # DISCLAIMER!
 
@@ -8,30 +12,33 @@ This stack is available to anyone at no cost, but on an as-is basis. 0x4447, LLC
 
 # How to deploy
 
-<a target="_blank" href="https://console.aws.amazon.com/cloudformation/home#/stacks/new?stackName=zer0x4447-XXX&templateURL=https://s3.amazonaws.com/0x4447-drive-cloudformation/XXX.json">
+<a target="_blank" href="https://console.aws.amazon.com/cloudformation/home#/stacks/new?stackName=zer0x4447-secure301&templateURL=https://s3.amazonaws.com/0x4447-drive-cloudformation/secure301.json">
 <img align="left" style="float: left; margin: 0 10px 0 0;" src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png"></a>
 
-All you need to do to deploy this stack is click the button to the left and follow the instructions that CloudFormation provides in your AWS Dashboard. Alternatively you can download the CF file from [here](https://s3.amazonaws.com/0x4447-drive-cloudformation/XXX.json).
+All you need to do to deploy this stack is click the button to the left and follow the instructions that CloudFormation provides in your AWS Dashboard. Alternatively you can download the CF file from [here](https://s3.amazonaws.com/0x4447-drive-cloudformation/secure301.json).
 
 # What will deploy?
 
-![XXX Diagram](https://raw.githubusercontent.com/0x4447/0x4447-product-XXX/assets/diagram.png)
+![Secure301 Diagram](https://raw.githubusercontent.com/0x4447/0x4447-product-XXX/assets/diagram.png)
 
-List me
+- 1x API Gateway
+- 1x API Gateway Domain
+- 1x Lambda
+  - 1x CodeBuild
+  - 1x CodePipeline
 
-All project resources can be found [here](https://github.com/topics/0x4447-product-XXX).
-
-# Auto deploy
-
-The stack is set up in a such a way that any time new code is pushed to a selected branch, the CodePipeline picks up the change and updates the Lambda for you. These are the available branches:
+All project resources can be found [here](https://github.com/topics/0x4447-product-secure301).
 
 # Manual work
 
-Work me
+Prior to deploying the stack you have to create a SSL Cert for the domain you want to redirect from. Using the Certificate Manager service. 
 
 # Pricing
 
-Price me.
+- [API Gateway](https://aws.amazon.com/api-gateway/pricing/)
+- [Lambda](https://aws.amazon.com/lambda/pricing/)
+- [CodeBuild](https://aws.amazon.com/codebuild/pricing/)
+- [CodePiepeline](https://aws.amazon.com/codepipeline/pricing/)
 
 # How to generate the CloudFormation file
 
