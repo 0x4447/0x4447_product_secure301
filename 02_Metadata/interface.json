@@ -7,9 +7,17 @@
                     },
                     "Parameters": [
                         "CodePipelineArtifactsParam",
-                        "GitHubTokenParam",
                         "StageParam",
                         "UniqueParam"
+                    ]
+                },
+                {
+                    "Label": {
+                        "default": "GitHub"
+                    },
+                    "Parameters": [
+                        "GitHubTokenParam",
+                        "GitHubAccountNamearam"
                     ]
                 },
                 {
