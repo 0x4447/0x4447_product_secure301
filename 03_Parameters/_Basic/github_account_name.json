@@ -1,7 +1,0 @@
-{
-	"GitHubAccountNamearam": {
-		"Description": "The name of the GitHub account you want to use. Usefull if you clone the Lambda to your account to mess with it.",
-		"Type": "String",		
-		"Default": "0x4447"
-	}
-}

@@ -16,33 +16,38 @@
 				],
 				"paths": {
 					"/": {
-					  "get": {
-						"produces": [
-						  "application/json"
-						],
-						"responses": {
-						  "200": {
-							"description": "200 response",
-							"schema": {
-							  "$ref": "#/definitions/Empty"
+						"get": {
+							"consumes": [
+								"application/json"
+							],
+							"responses": {
+								"301": {
+									"description": "301 response",
+									"headers": {
+										"Location": {
+											"type": "string"
+										}
+									}
+								}
+							},
+							"x-amazon-apigateway-integration": {
+								"type": "mock",
+								"responses": {
+									"301": {
+										"statusCode": "301",
+										"responseParameters": {
+											"method.response.header.Location": { "Fn::Sub": "'${UrlToParam}'" }
+										}
+									}
+								},
+								"requestTemplates": {
+									"application/json": "{\"statusCode\": 301}"
+								},
+								"passthroughBehavior": "when_no_match"
 							}
-						  }
-						},
-						"x-amazon-apigateway-integration": {
-						  "type": "aws_proxy",
-						  "uri": { "Fn::Join": ["", ["arn", ":", "aws", ":", "apigateway", ":", { "Ref": "AWS::Region" }, ":", "lambda", ":", "path/2015-03-31/functions/", { "Fn::GetAtt": ["LambdaRedirect", "Arn"]}, "/invocations"]]},
-						  "responses": {
-							"default": {
-							  "statusCode": "200"
-							}
-						  },
-						  "passthroughBehavior": "when_no_match",
-						  "httpMethod": "POST",
-						  "contentHandling": "CONVERT_TO_TEXT"
 						}
-					  }
 					}
-				  },
+				},
 				"definitions": {
 					"Empty": {
 						"type": "object",

@@ -3,7 +3,11 @@
 		"Type" : "AWS::ApiGateway::DomainName",
 		"Properties" : {
 			"CertificateArn" : { "Ref": "DomainFromCertParam" },
-			"DomainName" : { "Ref": "UrlFromParam" }
+			"DomainName" : { "Ref": "UrlFromParam" },
+			"EndpointConfiguration": {
+				"Types" : [ "EDGE" ]
+			},
+			"SecurityPolicy": "TLS_1_2"
 		}
 	}
 }

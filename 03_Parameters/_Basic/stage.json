@@ -1,7 +1,0 @@
-{
-	"StageParam": {
-		"Description": "Select what Stage are you deploying. So we know to which resources to link to when we deploy Lambda Functions, since the code can come from different branches.",
-		"Type": "String",		
-		"Default": "master"
-	}
-}

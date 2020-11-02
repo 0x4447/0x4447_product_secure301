@@ -6,18 +6,7 @@
                         "default": "Basic"
                     },
                     "Parameters": [
-                        "CodePipelineArtifactsParam",
-                        "StageParam",
                         "UniqueParam"
-                    ]
-                },
-                {
-                    "Label": {
-                        "default": "GitHub"
-                    },
-                    "Parameters": [
-                        "GitHubTokenParam",
-                        "GitHubAccountNamearam"
                     ]
                 },
                 {
@@ -34,7 +23,6 @@
             "ParameterLabels": {
                 "CodePipelineArtifactsParam": {"default": "CodePipeline Artifacts Location"},
                 "GitHubTokenParam": {"default": "GitHub Token"},
-                "StageParam": {"default": "Git branch"},
                 "UniqueParam": {"default": "Unique Name"},
 
                 "DomainFromCertParam": {"default": "Certificate of the From URL"},
