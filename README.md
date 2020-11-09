@@ -1,6 +1,6 @@
 # Secure301
 
-The secure301 stack is a simple solution to an annoying problem - it allows you to have HTTPS redirects with a 301 message. To achieve this the stack utilizes the API Gateway service and one basic Lambda to allow the redirect. 
+The secure301 stack is a simple solution to an annoying problem - it allows you to have HTTPS redirects with a 301 message. To achieve this the stack utilizes the API Gateway. 
 
 When deploying the stack you have to only manually make a SSL Certificate using the AWS Certificate Manager service, provide all the details in the deployment phase, and you'll get a working redirect. 
 
@@ -21,26 +21,17 @@ All you need to do to deploy this stack is click the button to the left and foll
 
 # What will deploy?
 
-![Secure301 Diagram](https://raw.githubusercontent.com/0x4447/0x4447_product_secure301/assets/diagram.png)
-
 - 1x API Gateway
 - 1x API Gateway Domain
-- 1x Lambda
-  - 1x CodeBuild
-  - 1x CodePipeline
-
-All project resources can be found [here](https://github.com/topics/0x4447-product-secure301).
 
 # Manual work
 
-Prior to deploying the stack you have to create a SSL Cert for the domain you want to redirect from. Using the Certificate Manager service. 
+- Prior to deploying the stack you have to create a SSL Cert for the domain you want to redirect from. Using the Certificate Manager service. 
+- Once deployed you have to take the geenral API  Gateway domian and update your DNS record.
 
 # Pricing
 
 - [API Gateway](https://aws.amazon.com/api-gateway/pricing/)
-- [Lambda](https://aws.amazon.com/lambda/pricing/)
-- [CodeBuild](https://aws.amazon.com/codebuild/pricing/)
-- [CodePiepeline](https://aws.amazon.com/codepipeline/pricing/)
 
 # How to generate the CloudFormation file
 
