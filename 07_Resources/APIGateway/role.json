@@ -2,7 +2,7 @@
 	"APIGatewayRole": {
 		"Type": "AWS::IAM::Role",
 		"Properties": {
-			"RoleName": { "Fn::Sub": "redirect_${UniqueParam}_apigateway" },
+			"RoleName": { "Fn::Sub": "redirect_with_apigateway_${UniqueParam}" },
 			"AssumeRolePolicyDocument": {
 				"Version": "2012-10-17",
 				"Statement": [

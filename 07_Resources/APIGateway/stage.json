@@ -3,14 +3,11 @@
 		"Type": "AWS::ApiGateway::Stage",
 		"Properties": {
 			"StageName": "production",
-			"Description": "Code for the public",
+			"Description": "redirect",
 			"DeploymentId": { "Ref": "WebhookRedirectDeployment" },
 			"RestApiId": { "Ref": "APIWebhookRedirect" },
 			"MethodSettings": [{
-				"DataTraceEnabled" : true,
 				"HttpMethod": "*",
-				"LoggingLevel" : "INFO",
-				"MetricsEnabled" : true,
 				"ResourcePath": "/*"
 			}]
 		}

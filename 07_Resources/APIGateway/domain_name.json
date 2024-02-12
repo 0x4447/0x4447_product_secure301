@@ -2,7 +2,7 @@
 	"APIDomainName": {
 		"Type" : "AWS::ApiGateway::DomainName",
 		"Properties" : {
-			"CertificateArn" : { "Ref": "DomainFromCertParam" },
+			"CertificateArn" : { "Ref": "RedirectCertificate" },
 			"DomainName" : { "Ref": "UrlFromParam" },
 			"EndpointConfiguration": {
 				"Types" : [ "EDGE" ]

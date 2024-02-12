@@ -1,0 +1,15 @@
+{
+    "RedirectRecordSet": {
+        "Type": "AWS::Route53::RecordSet",
+        "Properties": {
+            "Name": { "Ref": "UrlFromParam" },
+            "HostedZoneId": { "Ref": "HostedZoneParam" },
+            "AliasTarget": {
+                "DNSName": { "Fn::GetAtt": [ "APIDomainName", "DistributionDomainName" ] },
+                "HostedZoneId": { "Fn::GetAtt": [ "APIDomainName", "DistributionHostedZoneId" ] }
+            },
+            "Comment": "Record for API Gateway redirect endpoint.",
+            "Type": "A"
+        }
+    }
+}

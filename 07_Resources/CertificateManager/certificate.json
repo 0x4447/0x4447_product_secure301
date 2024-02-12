@@ -1,0 +1,15 @@
+{
+    "RedirectCertificate": {
+        "Type" : "AWS::CertificateManager::Certificate",
+        "Properties" : {
+            "DomainName" : { "Ref": "UrlFromParam" },
+            "ValidationMethod" : "DNS",
+            "DomainValidationOptions" : [
+                {
+                    "DomainName" : { "Ref": "UrlFromParam" },
+                    "HostedZoneId" : { "Ref": "HostedZoneParam" }
+                }
+            ]
+        }
+    }
+}

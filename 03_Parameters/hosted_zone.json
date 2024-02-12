@@ -1,5 +1,5 @@
 {
-	"UrlToParam": {
+	"HostedZoneParam": {
 		"Description": "The URL where you want to redirect the user to. Including the protocol. For example: https://www.example.com",
 		"Type": "String"
 	}

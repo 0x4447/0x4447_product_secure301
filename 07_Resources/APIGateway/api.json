@@ -2,7 +2,7 @@
 	"APIWebhookRedirect": {
 		"Type": "AWS::ApiGateway::RestApi",
 		"Properties": {
-			"Description": "Webhook to let Redirect send notifications to us.",
+			"Description": "Redirect from one URL to another.",
 			"Name": { "Fn::Sub": "redirect_${UniqueParam}" },
 			"Body": {
 				"swagger": "2.0",

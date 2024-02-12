@@ -1,6 +1,6 @@
 {
 	"UrlFromParam": {
-		"Description": "The domain name for the API endpoints. Basically the domain from where you want to redirect. NO HTTPS OR OTHER EXTRA FLUFF AROUND THE DOMAIN. For example: example.com",
+		"Description": "The domain name that you want to redirect from. NO HTTPS OR OTHER EXTRA FLUFF AROUND THE DOMAIN. For example: example.com",
 		"Type": "String"
 	}
 }
